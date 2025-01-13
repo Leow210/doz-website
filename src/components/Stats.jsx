@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Award, Users, Building, Trophy } from 'lucide-react';
+import { Award, Users, School, Contact } from 'lucide-react';
 
 const CountUpAnimation = ({ end, duration = 2000 }) => {
     const [count, setCount] = useState(0);
@@ -79,10 +79,10 @@ const Stats = () => {
                     </div>
 
                     <div className="grid md:grid-cols-4 gap-8">
-                        <StatCard icon={Users} number={500} label="Active Members" delay={0} />
-                        <StatCard icon={Building} number={50} label="Partner Organizations" delay={200} />
-                        <StatCard icon={Trophy} number={100} label="Awards Won" delay={400} />
-                        <StatCard icon={Award} number={15} label="Years of Excellence" delay={600} />
+                        <StatCard icon={Users} number={40} label="Active Members" delay={0} />
+                        <StatCard icon={Contact} number={500} label="Alumni" delay={200} />
+                        <StatCard icon={School} number={15} label="Majors Represented" delay={400} />
+                        <StatCard icon={Award} number={16} label="Years of Excellence" delay={600} />
                     </div>
                 </div>
             </div>

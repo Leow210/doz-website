@@ -9,70 +9,111 @@ import {
     Shield
 } from 'lucide-react';
 
+const SocietyInfo = () => (
+    <section className="bg-white py-16 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2" />
+
+        <div className="container mx-auto px-4 lg:px-12 xl:px-16 relative">
+            <div className="max-w-6xl mx-auto">
+                <div className="grid lg:grid-cols-12 gap-8 items-center">
+                    <div className="lg:col-span-4 relative">
+                        <div className="relative">
+                            <div className="absolute -left-4 top-0 w-1 h-24 bg-gradient-to-b from-emerald-500 to-transparent" />
+                            <div className="space-y-4">
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-50 rounded-full">
+                                    <span className="text-sm font-medium text-emerald-600">Founded in 2008</span>
+                                </div>
+                                <h2 className="text-4xl font-bold text-gray-900">
+                                    Who We
+                                    <span className="relative">
+                                        <span className="relative z-10 text-emerald-600"> Are</span>
+                                        <div className="absolute -bottom-1 left-0 w-full h-2 bg-emerald-500/30 skew-x-12" />
+                                    </span>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="lg:col-span-8 relative">
+                        <div className="bg-gradient-to-br from-white via-emerald-50 to-white p-8 rounded-2xl shadow-lg relative">
+                            <div className="absolute top-0 right-0 w-24 h-24 border-2 border-emerald-500/20 rounded-lg transform rotate-12 -translate-y-8 translate-x-8" />
+                            <div className="relative space-y-6">
+                                <p className="text-xl text-gray-700 leading-relaxed">
+                                    <span className="font-semibold text-emerald-600">Delta Omicron Zeta</span> is a co-educational professional
+                                    collegiate society born at USC with a singular mission: fostering personal growth in a diverse community
+                                    of leaders through self-understanding and the collective practice of leadership.
+                                </p>
+                                <p className="text-xl text-gray-700 leading-relaxed">
+                                    Unlike traditional organizations where leadership is a byproduct, we place it at the heart
+                                    of everything we do. Our innovative approach creates dedicated spaces for self-reflection,
+                                    relationship building, and actionable leadership development.
+                                </p>
+                                <p className="text-xl text-gray-700 leading-relaxed">
+                                    Through our ΔΟΖ Active and Journeymen programming, we challenge USC's top student leaders to
+                                    refine their perspectives, leverage their strengths, and develop leadership strategies that
+                                    resonate with their authentic selves.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+);
+
 const PillarSection = ({ pillar, isActive, index }) => {
     return (
         <section
             id={`pillar-${index + 1}`}
             className={`min-h-screen flex items-center relative ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
         >
-            <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:block">
+            <div className="absolute left-0 lg:left-8 xl:left-12 top-1/2 -translate-y-1/2 hidden lg:block">
                 <div className="flex flex-col items-center gap-2">
-                    <div className={`w-1 h-24 ${isActive ? 'bg-emerald-500' : 'bg-gray-200'} transition-colors`} />
+                    <div className={`w-1 h-16 ${isActive ? 'bg-emerald-500' : 'bg-gray-200'} transition-colors`} />
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center
                                 ${isActive ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-600'} 
                                 transition-colors`}>
                         {index + 1}
                     </div>
-                    <div className={`w-1 h-24 ${isActive ? 'bg-emerald-500' : 'bg-gray-200'} transition-colors`} />
+                    <div className={`w-1 h-16 ${isActive ? 'bg-emerald-500' : 'bg-gray-200'} transition-colors`} />
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className={`space-y-6 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full">
+            <div className="container mx-auto px-4 lg:px-12 xl:px-16 py-12">
+                <div className="grid lg:grid-cols-2 gap-8 items-center">
+                    <div className={`space-y-4 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-50 rounded-full">
                             {React.createElement(pillar.icon, { className: "w-4 h-4 text-emerald-600" })}
                             <span className="text-sm font-medium text-emerald-600">Pillar {index + 1}</span>
                         </div>
 
-                        <h2 className="text-4xl font-bold text-gray-800">
+                        <h2 className="text-3xl font-bold text-gray-800">
                             {pillar.title}
                         </h2>
 
-                        <p className="text-xl text-gray-600 leading-relaxed">
+                        <p className="text-lg text-gray-600 leading-relaxed">
                             {pillar.description}
                         </p>
-
-                        <div className="space-y-4">
-                            {pillar.keyPoints.map((point, idx) => (
-                                <div key={idx} className="flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-emerald-100 flex-shrink-0 
-                                                flex items-center justify-center mt-1">
-                                        <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                                    </div>
-                                    <p className="text-gray-600">{point}</p>
-                                </div>
-                            ))}
-                        </div>
                     </div>
 
                     <div className={`relative ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                        <div className="relative aspect-square rounded-2xl overflow-hidden">
+                        <div className="relative aspect-square rounded-xl overflow-hidden bg-emerald-100">
                             <img
-                                src={pillar.image}
+                                src={"/api/placeholder/800/800"}
                                 alt={pillar.title}
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent" />
                         </div>
 
-                        {/* Stats or highlight */}
-                        <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
+                        <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-xl">
                             <div className="flex items-center gap-3">
-                                {React.createElement(pillar.icon, { className: "w-8 h-8 text-emerald-600" })}
+                                {React.createElement(pillar.icon, { className: "w-6 h-6 text-emerald-600" })}
                                 <div>
-                                    <div className="text-2xl font-bold text-gray-800">{pillar.stat}</div>
-                                    <div className="text-sm text-gray-600">{pillar.statLabel}</div>
+                                    <div className="text-base font-bold text-gray-800">Founding Contributor</div>
+                                    <div className="text-sm text-gray-600">{pillar.founder}</div>
                                 </div>
                             </div>
                         </div>
@@ -89,101 +130,45 @@ const AboutPage = () => {
     const pillars = [
         {
             icon: BookOpen,
-            title: "Academic Excellence",
-            description: "We foster a culture of intellectual curiosity and academic achievement, pushing our members to excel in their studies while developing critical thinking skills.",
-            keyPoints: [
-                "Maintain a minimum 3.5 GPA throughout membership",
-                "Access to exclusive study groups and academic resources",
-                "Regular workshops on academic success strategies",
-                "Mentorship from high-achieving alumni"
-            ],
-            image: "/src/assets/academic.jpg",
-            stat: "3.8",
-            statLabel: "Average Member GPA"
-        },
-        {
-            icon: Users,
-            title: "Leadership Development",
-            description: "Our comprehensive leadership program equips members with the skills and experiences needed to lead in any environment.",
-            keyPoints: [
-                "Leadership training workshops and seminars",
-                "Opportunities to lead community projects",
-                "Executive board positions and committee roles",
-                "Leadership certification programs"
-            ],
-            image: "/src/assets/leadership.jpg",
-            stat: "100+",
-            statLabel: "Leadership Positions"
-        },
-        {
-            icon: Heart,
-            title: "Community Service",
-            description: "Making a positive impact in our community is at the heart of our organization's values.",
-            keyPoints: [
-                "Monthly community service projects",
-                "Partnerships with local non-profits",
-                "Annual charity fundraising events",
-                "Social impact initiatives"
-            ],
-            image: "/src/assets/community.jpg",
-            stat: "5000+",
-            statLabel: "Service Hours"
-        },
-        {
-            icon: Trophy,
-            title: "Professional Development",
-            description: "We prepare our members for successful careers through networking, skill-building, and professional experiences.",
-            keyPoints: [
-                "Resume workshops and career fairs",
-                "Professional mentorship program",
-                "Internship opportunities",
-                "Industry networking events"
-            ],
-            image: "/src/assets/professional.jpg",
-            stat: "90%",
-            statLabel: "Employment Rate"
+            title: "Activism",
+            description: "Activism is the reason leaders assist with a cause that promotes the common good. It requires a leader to serve selflessly. It gives larger meaning to leadership. It can be intertwined with any leadership role. Activism is proactive and never without placement and serves as a means to balance any other leadership objective. Activism is the good that is the cause and result of leadership.",
+            founder: "Max Slavkin"
         },
         {
             icon: Globe,
-            title: "Cultural Awareness",
-            description: "Embracing diversity and promoting cultural understanding is fundamental to our organization.",
-            keyPoints: [
-                "Cultural exchange programs",
-                "Diversity and inclusion workshops",
-                "International student support",
-                "Multicultural events"
-            ],
-            image: "/src/assets/cultural.jpg",
-            stat: "50+",
-            statLabel: "Countries Represented"
+            title: "Judgment",
+            description: "Judgment is what guides leaders in every decision they make. It gives them discernment between right and wrong. Judgment allows a leader to act when there is not a ready answer to a problem. It requires leaders to draw upon personal experiences and wisdom to make decisions. Judgment is used when there is not a template to follow.",
+            founder: "Jeff Okita"
+        },
+        {
+            icon: Heart,
+            title: "Enthusiasm",
+            description: "Enthusiasm is what leaders draw from as energy for their actions. It provides happiness and joy for what they are doing. Enthusiasm overshadows any frustration and discouragement a leader may face. It is the excitement one gets from leading. Enthusiasm is always optimistic; it sees the positive side of every situation.",
+            founder: "Chris Cass"
         },
         {
             icon: Shield,
-            title: "Personal Integrity",
-            description: "We uphold the highest standards of ethics and integrity in all our actions and decisions.",
-            keyPoints: [
-                "Ethics training workshops",
-                "Honor code commitment",
-                "Peer accountability system",
-                "Character development programs"
-            ],
-            image: "/src/assets/integrity.jpg",
-            stat: "100%",
-            statLabel: "Code Compliance"
+            title: "Perseverance",
+            description: "Perseverance is a leader's determination to continue forward despite any obstacles or setbacks. It is the will to keep striving forward even though everything and everyone may say otherwise. Perseverance is the inner desire to continue toward achievement no matter what; it is never deterred.",
+            founder: "Raquel Lucente"
+        },
+        {
+            icon: Trophy,
+            title: "Integrity",
+            description: "Integrity is one of the most sought-after attributes in a leader. It is what guides a leader's actions and influences all thoughts and decisions. Integrity is used to determine the reliability and honesty of a person. It is inextricably linked to a leader's reputation and character.",
+            founder: "Kristen Priddy"
         },
         {
             icon: Lightbulb,
-            title: "Innovation & Creativity",
-            description: "We encourage creative thinking and innovative approaches to solving real-world challenges.",
-            keyPoints: [
-                "Innovation challenges and hackathons",
-                "Creative problem-solving workshops",
-                "Entrepreneurship initiatives",
-                "Design thinking programs"
-            ],
-            image: "/src/assets/innovation.jpg",
-            stat: "25+",
-            statLabel: "Innovation Projects"
+            title: "Passion",
+            description: "Passion provides the purpose behind what each great leader achieves. It is a deeply rooted love for what leaders devote their time to. It is what keeps them going when nothing else can. Passion is unique to each leader and can sometimes defy logic to others.",
+            founder: "Miya Williams"
+        },
+        {
+            icon: Users,
+            title: "Ambition",
+            description: "It is a necessary tool on the path toward accomplishment because it defeats all obstacles and strengthens itself with time. Ambition is never satisfied. It is always looking forward to the next goal.",
+            founder: "Mike Thomsen"
         }
     ];
 
@@ -208,22 +193,78 @@ const AboutPage = () => {
 
     return (
         <div className="relative">
-            {/* Hero Section */}
-            <section className="min-h-[60vh] bg-emerald-600 relative flex items-center">
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="container mx-auto px-4 relative">
-                    <div className="max-w-3xl">
-                        <h1 className="text-5xl font-bold text-white mb-6">
-                            Our Seven Pillars of Excellence
-                        </h1>
-                        <p className="text-xl text-white/90">
-                            Discover the foundational principles that guide our organization and shape our members into exceptional leaders.
-                        </p>
+            <section className="min-h-screen relative overflow-hidden">
+                <div className="absolute inset-0">
+                    <img
+                        src="/api/placeholder/1920/1080"
+                        alt="DOZ Leadership"
+                        className="w-full h-full object-cover brightness-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/50 to-transparent" />
+                </div>
+
+                <div className="relative min-h-screen flex items-center">
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-3xl relative">
+                            <div className="space-y-8">
+                                <div className="space-y-6 relative">
+                                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 backdrop-blur-sm rounded-full border border-emerald-500/20">
+                                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                                        <span className="text-sm font-medium text-emerald-300">Delta Omicron Zeta</span>
+                                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                                    </div>
+
+                                    <div className="relative z-10">
+                                        <h1 className="text-7xl font-bold text-white leading-tight">
+                                            Our Seven
+                                            <div className="relative inline-block ml-4">
+                                                <span className="relative z-10 text-emerald-400">Pillars</span>
+                                                <div className="absolute -bottom-2 left-0 w-full h-2 bg-emerald-500/30 skew-x-12" />
+                                            </div>
+                                        </h1>
+                                    </div>
+
+                                    <p className="text-2xl text-emerald-50/90 max-w-xl">
+                                        Discover the foundational principles that guide our organization and shape our members into exceptional leaders who make lasting impact.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="absolute -top-12 right-0 w-48 h-48 border border-emerald-500/20 rounded-lg transform rotate-12" />
+                            <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-emerald-500/5 rounded-full" />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Pillar Sections */}
+            <SocietyInfo />
+
+            <section className="bg-gradient-to-b from-white via-emerald-50/50 to-white py-24 relative overflow-hidden">
+                <div className="absolute inset-0 bg-grid-gray-900/[0.04] bg-[size:32px]" />
+
+                <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-20" />
+                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-20" />
+
+                <div className="container mx-auto px-4 lg:px-12 xl:px-16 relative">
+                    <div className="max-w-4xl mx-auto text-center relative">
+                        <span className="block text-base text-emerald-600 font-semibold tracking-wide uppercase mb-4">Our Foundation</span>
+
+                        <h2 className="text-5xl font-bold text-gray-900 mb-6 relative inline-block">
+                            The Seven Pillars
+                            <div className="absolute -bottom-2 left-0 w-full h-2 bg-emerald-500/30 skew-x-12" />
+                        </h2>
+
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto relative">
+                            These foundational principles have been the cornerstone of our organization since 2008,
+                            shaping generations of leaders who drive meaningful change in their communities.
+                        </p>
+
+                        <div className="absolute top-0 right-0 w-20 h-20 border-2 border-emerald-500/20 rounded-lg transform rotate-12" />
+                        <div className="absolute bottom-0 left-0 w-16 h-16 bg-emerald-500/10 rounded-full" />
+                    </div>
+                </div>
+            </section>
+
             {pillars.map((pillar, index) => (
                 <PillarSection
                     key={index}
@@ -233,13 +274,12 @@ const AboutPage = () => {
                 />
             ))}
 
-            {/* Quick Navigation */}
-            <div className="fixed right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-4">
+            <div className="fixed right-4 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3">
                 {pillars.map((_, index) => (
                     <a
                         key={index}
                         href={`#pillar-${index + 1}`}
-                        className={`w-3 h-3 rounded-full transition-colors
+                        className={`w-2 h-2 rounded-full transition-colors
                             ${activePillar === index ? 'bg-emerald-500' : 'bg-gray-300'}`}
                         onClick={(e) => {
                             e.preventDefault();
