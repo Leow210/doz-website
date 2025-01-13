@@ -33,9 +33,9 @@ const Footer = () => {
 
                     {/* Social Links */}
                     <div className="flex gap-3">
-                        <SocialLink icon={Instagram} href="#" label="Instagram" />
-                        <SocialLink icon={Linkedin} href="#" label="LinkedIn" />
-                        <SocialLink icon={Mail} href="mailto:hello@doz.edu" label="Email" />
+                        <SocialLink icon={Instagram} href="https://www.instagram.com/uscdoz" label="Instagram" />
+                        <SocialLink icon={Linkedin} href="https://www.linkedin.com/company/delta-omicron-zeta/" label="LinkedIn" />
+                        <SocialLink icon={Mail} href="mailto:dozcommunications@gmail.com" label="Email" />
                     </div>
                 </div>
 

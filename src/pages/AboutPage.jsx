@@ -8,6 +8,15 @@ import {
     Lightbulb,
     Shield
 } from 'lucide-react';
+import heroImage from '/src/assets/actives2024.jpeg';
+import pillar1image from '/src/assets/pillar1.jpg';
+import pillar2image from '/src/assets/pillar2.jpg';
+import pillar3image from '/src/assets/pillar3.jpg';
+import pillar4image from '/src/assets/pillar4.jpg';
+import pillar5image from '/src/assets/pillar5.jpg';
+import pillar6image from '/src/assets/pillar6.jpg';
+import pillar7image from '/src/assets/pillar7.jpg';
+
 
 const SocietyInfo = () => (
     <section className="bg-white py-16 relative overflow-hidden">
@@ -101,7 +110,7 @@ const PillarSection = ({ pillar, isActive, index }) => {
                     <div className={`relative ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                         <div className="relative aspect-square rounded-xl overflow-hidden bg-emerald-100">
                             <img
-                                src={"/api/placeholder/800/800"}
+                                src={pillar.image}
                                 alt={pillar.title}
                                 className="w-full h-full object-cover"
                             />
@@ -132,43 +141,50 @@ const AboutPage = () => {
             icon: BookOpen,
             title: "Activism",
             description: "Activism is the reason leaders assist with a cause that promotes the common good. It requires a leader to serve selflessly. It gives larger meaning to leadership. It can be intertwined with any leadership role. Activism is proactive and never without placement and serves as a means to balance any other leadership objective. Activism is the good that is the cause and result of leadership.",
-            founder: "Max Slavkin"
-        },
-        {
-            icon: Globe,
-            title: "Judgment",
-            description: "Judgment is what guides leaders in every decision they make. It gives them discernment between right and wrong. Judgment allows a leader to act when there is not a ready answer to a problem. It requires leaders to draw upon personal experiences and wisdom to make decisions. Judgment is used when there is not a template to follow.",
-            founder: "Jeff Okita"
-        },
-        {
-            icon: Heart,
-            title: "Enthusiasm",
-            description: "Enthusiasm is what leaders draw from as energy for their actions. It provides happiness and joy for what they are doing. Enthusiasm overshadows any frustration and discouragement a leader may face. It is the excitement one gets from leading. Enthusiasm is always optimistic; it sees the positive side of every situation.",
-            founder: "Chris Cass"
-        },
-        {
-            icon: Shield,
-            title: "Perseverance",
-            description: "Perseverance is a leader's determination to continue forward despite any obstacles or setbacks. It is the will to keep striving forward even though everything and everyone may say otherwise. Perseverance is the inner desire to continue toward achievement no matter what; it is never deterred.",
-            founder: "Raquel Lucente"
-        },
-        {
-            icon: Trophy,
-            title: "Integrity",
-            description: "Integrity is one of the most sought-after attributes in a leader. It is what guides a leader's actions and influences all thoughts and decisions. Integrity is used to determine the reliability and honesty of a person. It is inextricably linked to a leader's reputation and character.",
-            founder: "Kristen Priddy"
-        },
-        {
-            icon: Lightbulb,
-            title: "Passion",
-            description: "Passion provides the purpose behind what each great leader achieves. It is a deeply rooted love for what leaders devote their time to. It is what keeps them going when nothing else can. Passion is unique to each leader and can sometimes defy logic to others.",
-            founder: "Miya Williams"
+            founder: "Max Slavkin",
+            image: pillar1image
         },
         {
             icon: Users,
             title: "Ambition",
             description: "It is a necessary tool on the path toward accomplishment because it defeats all obstacles and strengthens itself with time. Ambition is never satisfied. It is always looking forward to the next goal.",
-            founder: "Mike Thomsen"
+            founder: "Mike Thomsen",
+            image: pillar2image
+        },
+        {
+            icon: Globe,
+            title: "Judgment",
+            description: "Judgment is what guides leaders in every decision they make. It gives them discernment between right and wrong. Judgment allows a leader to act when there is not a ready answer to a problem. It requires leaders to draw upon personal experiences and wisdom to make decisions. Judgment is used when there is not a template to follow.",
+            founder: "Jeff Okita",
+            image: pillar3image
+        },
+        {
+            icon: Heart,
+            title: "Enthusiasm",
+            description: "Enthusiasm is what leaders draw from as energy for their actions. It provides happiness and joy for what they are doing. Enthusiasm overshadows any frustration and discouragement a leader may face. It is the excitement one gets from leading. Enthusiasm is always optimistic; it sees the positive side of every situation.",
+            founder: "Chris Cass",
+            image: pillar4image
+        },
+        {
+            icon: Shield,
+            title: "Perseverance",
+            description: "Perseverance is a leader's determination to continue forward despite any obstacles or setbacks. It is the will to keep striving forward even though everything and everyone may say otherwise. Perseverance is the inner desire to continue toward achievement no matter what; it is never deterred.",
+            founder: "Raquel Lucente",
+            image: pillar5image
+        },
+        {
+            icon: Trophy,
+            title: "Integrity",
+            description: "Integrity is one of the most sought-after attributes in a leader. It is what guides a leader's actions and influences all thoughts and decisions. Integrity is used to determine the reliability and honesty of a person. It is inextricably linked to a leader's reputation and character.",
+            founder: "Kristen Priddy",
+            image: pillar6image
+        },
+        {
+            icon: Lightbulb,
+            title: "Passion",
+            description: "Passion provides the purpose behind what each great leader achieves. It is a deeply rooted love for what leaders devote their time to. It is what keeps them going when nothing else can. Passion is unique to each leader and can sometimes defy logic to others.",
+            founder: "Miya Williams",
+            image: pillar7image
         }
     ];
 
@@ -196,7 +212,7 @@ const AboutPage = () => {
             <section className="min-h-screen relative overflow-hidden">
                 <div className="absolute inset-0">
                     <img
-                        src="/api/placeholder/1920/1080"
+                        src={heroImage}
                         alt="DOZ Leadership"
                         className="w-full h-full object-cover brightness-110"
                     />
@@ -230,7 +246,6 @@ const AboutPage = () => {
                                 </div>
                             </div>
 
-                            <div className="absolute -top-12 right-0 w-48 h-48 border border-emerald-500/20 rounded-lg transform rotate-12" />
                             <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-emerald-500/5 rounded-full" />
                         </div>
                     </div>

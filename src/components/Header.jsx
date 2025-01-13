@@ -19,9 +19,7 @@ const Header = ({ alwaysShowBackground = false }) => {
     const navigationLinks = [
         { name: 'About', path: '/about' },
         { name: 'E-board', path: '/eboard' },
-        { name: 'Members', path: '/members' },
         { name: 'Achievements', path: '/achievements' },
-        { name: 'Resources', path: '/resources' },
         { name: 'Apply', path: '/apply', isButton: true }
     ];
 

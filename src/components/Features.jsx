@@ -89,7 +89,7 @@ const Features = () => {
             description: "Access opportunities at 50+ companies where our alumni and active members work and lead.",
             stats: [
                 { icon: <Building className="w-4 h-4" />, value: "100+ Companies" },
-                { icon: <Globe className="w-4 h-4" />, value: "$2M+ Raised" }
+                { icon: <Globe className="w-4 h-4" />, value: "$50k+ Raised" }
             ]
         },
         {
