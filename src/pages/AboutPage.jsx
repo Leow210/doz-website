@@ -78,7 +78,7 @@ const PillarSection = ({ pillar, isActive, index }) => {
             id={`pillar-${index + 1}`}
             className={`min-h-screen flex items-center relative ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
         >
-            <div className="absolute left-0 lg:left-8 xl:left-12 top-1/2 -translate-y-1/2 hidden lg:block">
+            <div className="absolute left-0 lg:left-20 xl:left-28 top-1/2 -translate-y-1/2 hidden lg:block">
                 <div className="flex flex-col items-center gap-2">
                     <div className={`w-1 h-16 ${isActive ? 'bg-emerald-500' : 'bg-gray-200'} transition-colors`} />
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center
@@ -90,7 +90,7 @@ const PillarSection = ({ pillar, isActive, index }) => {
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 lg:px-12 xl:px-16 py-12">
+            <div className="container mx-auto px-4 lg:px-28 xl:px-36 py-12">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                     <div className={`space-y-4 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-50 rounded-full">
@@ -224,24 +224,21 @@ const AboutPage = () => {
                         <div className="max-w-3xl relative">
                             <div className="space-y-8">
                                 <div className="space-y-6 relative">
-                                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 backdrop-blur-sm rounded-full border border-emerald-500/20">
-                                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                        <span className="text-sm font-medium text-emerald-300">Delta Omicron Zeta</span>
-                                        <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                                    </div>
 
                                     <div className="relative z-10">
                                         <h1 className="text-7xl font-bold text-white leading-tight">
-                                            Our Seven
+                                            Building
                                             <div className="relative inline-block ml-4">
-                                                <span className="relative z-10 text-emerald-400">Pillars</span>
+                                                <span className="relative z-10 text-emerald-400">Tomorrow's</span>
                                                 <div className="absolute -bottom-2 left-0 w-full h-2 bg-emerald-500/30 skew-x-12" />
                                             </div>
+                                            <br />
+                                            Leaders Today
                                         </h1>
                                     </div>
 
                                     <p className="text-2xl text-emerald-50/90 max-w-xl">
-                                        Discover the foundational principles that guide our organization and shape our members into exceptional leaders who make lasting impact.
+                                        We welcome passionate individuals from all backgrounds to join our inclusive community where leadership principles and personal growth shape the future of positive change.
                                     </p>
                                 </div>
                             </div>
@@ -251,6 +248,7 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
+
 
             <SocietyInfo />
 

@@ -1,9 +1,8 @@
-// components/Features.jsx
 import React, { useState } from 'react';
-import { Building, Users, GraduationCap, Briefcase, ArrowRight, School, Globe, Clock } from 'lucide-react';
+import { Building, Users, GraduationCap, Briefcase, ArrowRight, School, Globe, Clock, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const FeatureCard = ({ icon: Icon, title, description, stats, index }) => {
+const FeatureCard = ({ icon: Icon, title, description, stats, index, link }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -49,10 +48,10 @@ const FeatureCard = ({ icon: Icon, title, description, stats, index }) => {
                     </div>
                 )}
 
-                <button className="flex items-center gap-2 text-emerald-600 font-medium group/btn">
+                <Link to={link} className="flex items-center gap-2 text-emerald-600 font-medium group/btn">
                     Learn more
                     <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                </Link>
             </div>
 
             {index < 3 && (
@@ -71,8 +70,9 @@ const Features = () => {
             description: "Join a dynamic network of 500+ alumni and 40+ active members working across various industries and sectors.",
             stats: [
                 { icon: <Users className="w-4 h-4" />, value: "500+ Alumni" },
-                { icon: <Clock className="w-4 h-4" />, value: "16 Years" }
-            ]
+                { icon: <Clock className="w-4 h-4" />, value: "Founded in 2008" }
+            ],
+            link: "/eboard"
         },
         {
             icon: GraduationCap,
@@ -81,25 +81,28 @@ const Features = () => {
             stats: [
                 { icon: <School className="w-4 h-4" />, value: "15+ Majors" },
                 { icon: <Building className="w-4 h-4" />, value: "5+ Schools" }
-            ]
+            ],
+            link: "/eboard"
         },
         {
             icon: Briefcase,
             title: "Professional Impact",
-            description: "Access opportunities at 50+ companies where our alumni and active members work and lead.",
+            description: "Access opportunities and connections at 100+ companies where our alumni and active members work and lead.",
             stats: [
                 { icon: <Building className="w-4 h-4" />, value: "100+ Companies" },
                 { icon: <Globe className="w-4 h-4" />, value: "$50k+ Raised" }
-            ]
+            ],
+            link: "/achievements"
         },
         {
-            icon: Globe,
-            title: "Global Network",
-            description: "Connect with members and alumni working across different industries and locations worldwide.",
+            icon: Heart,
+            title: "Open to Everyone",
+            description: "Whether you're a freshman just starting or a senior, we welcome passionate leaders from all USC class years and majors.",
             stats: [
-                { icon: <Users className="w-4 h-4" />, value: "40+ Actives" },
-                { icon: <Building className="w-4 h-4" />, value: "20+ Industries" }
-            ]
+                { icon: <Users className="w-4 h-4" />, value: "All Years" },
+                { icon: <School className="w-4 h-4" />, value: "All Majors" }
+            ],
+            link: "/about"
         }
     ];
 

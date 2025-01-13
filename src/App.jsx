@@ -9,13 +9,13 @@ import ResourcesPage from './pages/ResourcesPage';
 import GeneralMembersPage from './pages/GeneralMembersPage';
 import AchievementsPage from './pages/AchievementsPage';
 import ComingSoonPage from './pages/ComingSoonPage';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollManager from './components/ScrollManager';
 import AdminPanel from './pages/AdminPanel';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <ScrollManager />
       <Routes>
         {/* Admin routes outside of main layout */}
         <Route path="/admin" element={<AdminPanel />} />
