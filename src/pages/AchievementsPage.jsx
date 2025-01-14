@@ -50,8 +50,8 @@ const AchievementsPage = ({ content }) => {
                             <div className="text-gray-600">Active Alumni</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-4xl font-bold text-emerald-600 mb-2">28+</div>
-                            <div className="text-gray-600">Partner Companies</div>
+                            <div className="text-4xl font-bold text-emerald-600 mb-2">100+</div>
+                            <div className="text-gray-600">Companies</div>
                         </div>
                         <div className="text-center">
                             <div className="text-4xl font-bold text-emerald-600 mb-2">95%</div>
