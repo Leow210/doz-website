@@ -20,7 +20,7 @@ const ComingSoonPage = () => {
         {
             icon: Users,
             date: "Jan 21-23",
-            title: "Recruitment Fair Tabling",
+            title: "Recruitment Tabling",
             time: "1:00 PM - 3:30 PM"
         },
         {
@@ -31,7 +31,7 @@ const ComingSoonPage = () => {
         },
         {
             icon: Users,
-            date: "Jan 29",
+            date: "Jan 28",
             title: "Info Session #1 - Speed Dating",
             time: "7:00 PM - 8:30 PM"
         }
@@ -40,8 +40,14 @@ const ComingSoonPage = () => {
     const rightColumnEvents = [
         {
             icon: FileText,
+            date: "Jan 29",
+            title: "Networking Workshop",
+            time: "7:00 PM - 8:30 PM"
+        },
+        {
+            icon: Pizza,
             date: "Jan 30",
-            title: "Networking Workshop + Applications Due",
+            title: "Event 2: Pizza & Trivia + Applications Due",
             time: "7:00 PM - 8:30 PM"
         },
         {
@@ -50,12 +56,6 @@ const ComingSoonPage = () => {
             title: "Group Interviews",
             time: "TBD"
         },
-        {
-            icon: Pizza,
-            date: "Feb 3",
-            title: "Event 2: Pizza/Snack & Trivia/Donation Event",
-            time: "TBD"
-        }
     ];
 
     return (
@@ -90,6 +90,7 @@ const ComingSoonPage = () => {
                             </p>
                         </div>
 
+
                         {/* Timeline Section */}
                         <div className="mt-12 bg-gradient-to-br from-white via-emerald-50 to-white p-8 rounded-xl">
                             <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2 mb-8">
@@ -117,7 +118,7 @@ const ComingSoonPage = () => {
                         {/* Interest Form Button */}
                         <div className="mt-12 text-center">
                             <Link
-                                to="/interest-form"
+                                to="https://docs.google.com/forms/d/1AWdb4gLNORpnymZp508WJ3ozMNvrCUplXEm-Co3g3mE/viewform?edit_requested=true"
                                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg
                                          bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 
                                          transition-colors duration-200 font-medium"
@@ -126,6 +127,7 @@ const ComingSoonPage = () => {
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
                         </div>
+
                     </div>
                 </div>
             </div>
