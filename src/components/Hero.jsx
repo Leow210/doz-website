@@ -17,11 +17,11 @@ const Hero = () => {
             </div>
 
             <div className="relative min-h-screen flex items-center">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-2xl">
+                <div className="container mx-auto px-4 sm:px-6 md:px-8">
+                    <div className="max-w-2xl ml-2 sm:ml-4 md:ml-6">
                         <div className="relative">
                             <div className="absolute -left-4 top-0 w-1 h-24 bg-gradient-to-b from-emerald-500 to-transparent" />
-                            <h1 className="text-7xl font-bold text-white leading-tight mb-6">
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
                                 Lead with
                                 <br />
                                 <div className="relative inline-block">
@@ -31,14 +31,14 @@ const Hero = () => {
                                     <div className="absolute -bottom-2 left-0 w-full h-2 bg-emerald-500/30 skew-x-12" />
                                 </div>
                             </h1>
-                            <p className="text-2xl text-gray-100 mb-8 max-w-lg">
+                            <p className="text-lg sm:text-xl md:text-2xl text-gray-100 mb-8 max-w-lg">
                                 Join ΔOZ, a premier leadership society at USC where future leaders forge their paths through action, innovation, and purposeful collaboration.
                             </p>
 
-                            <div className="flex gap-6 items-center">
+                            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center">
                                 <Link
                                     to="/apply"
-                                    className="group relative px-8 py-4 bg-emerald-500 text-white rounded-lg overflow-hidden inline-block"
+                                    className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-emerald-500 text-white rounded-lg overflow-hidden inline-block"
                                 >
                                     <div className="absolute inset-0 bg-emerald-600 transform translate-y-full transition-transform group-hover:translate-y-0" />
                                     <span className="relative flex items-center gap-2">
@@ -55,8 +55,8 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        <div className="absolute -top-8 -right-8 w-32 h-32 border-2 border-emerald-500/20 rounded-lg transform rotate-12" />
-                        <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-emerald-500/10 rounded-full" />
+                        <div className="absolute -top-8 -right-8 w-24 sm:w-32 h-24 sm:h-32 border-2 border-emerald-500/20 rounded-lg transform rotate-12" />
+                        <div className="absolute -bottom-8 -left-8 w-20 sm:w-24 h-20 sm:h-24 bg-emerald-500/10 rounded-full" />
                     </div>
                 </div>
             </div>

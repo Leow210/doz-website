@@ -220,13 +220,12 @@ const AboutPage = () => {
                 </div>
 
                 <div className="relative min-h-screen flex items-center">
-                    <div className="container mx-auto px-4">
-                        <div className="max-w-3xl relative">
+                    <div className="container mx-auto px-4 sm:px-6 md:px-8">
+                        <div className="max-w-3xl relative ml-2 sm:ml-4 md:ml-6">
                             <div className="space-y-8">
                                 <div className="space-y-6 relative">
-
                                     <div className="relative z-10">
-                                        <h1 className="text-7xl font-bold text-white leading-tight">
+                                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                                             Building
                                             <div className="relative inline-block ml-4">
                                                 <span className="relative z-10 text-emerald-400">Tomorrow's</span>
@@ -237,7 +236,7 @@ const AboutPage = () => {
                                         </h1>
                                     </div>
 
-                                    <p className="text-2xl text-emerald-50/90 max-w-xl">
+                                    <p className="text-lg sm:text-xl md:text-2xl text-emerald-50/90 max-w-xl">
                                         We welcome passionate individuals from all backgrounds to join our inclusive community where leadership principles and personal growth shape the future of positive change.
                                     </p>
                                 </div>
