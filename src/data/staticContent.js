@@ -1,6 +1,6 @@
 
 // This file is auto-generated. Do not edit directly.
-// Last updated: 2025-01-13T18:17:39.147Z
+// Last updated: 2025-01-16T05:57:11.032Z
 
 export const siteContent = {
   "members": [
@@ -12,7 +12,9 @@ export const siteContent = {
       "Major": "Economics & Data Science",
       "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQEa6m-rpR4MLA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726431567945?e=1741824000&v=beta&t=x1p633Ot8WTUA1QfP9aPiuQpYqD2NYPB6uy9aSZZylc",
       "LinkedIn": "https://www.linkedin.com/in/rachanakadikar/",
-      "Type": "eboard"
+      "Type": "eboard",
+      "Bio": "",
+      "Minor": "Business"
     },
     {
       "": "",
@@ -59,7 +61,7 @@ export const siteContent = {
       "Name": "Ashley Huang",
       "Position": "VP of Expansion",
       "Year": "2026",
-      "Major": "Communications",
+      "Major": "Communication",
       "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQHe35XoAaxtOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728545670708?e=1742428800&v=beta&t=3Ao-TfCtGYvF_j2Rg1Ks03JcqxLmn73oNe8xQCBSbm4",
       "LinkedIn": "https://www.linkedin.com/in/ashleyhuang819/",
       "Type": "eboard"
@@ -138,7 +140,7 @@ export const siteContent = {
       "": "",
       "Name": "Katelyn Saiki",
       "Position": "Seargent at Arms",
-      "Year": "2026",
+      "Year": "2027",
       "Major": "Business Administration",
       "ImageUrl": "https://media.licdn.com/dms/image/v2/D4D03AQFHwCu8PpbwHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707246485588?e=1742428800&v=beta&t=J9mXFWLahGD22nmYLGx2H9q8HgkfzU6Ovm8qIpORf_c",
       "LinkedIn": "https://www.linkedin.com/in/katelyn-saiki/",

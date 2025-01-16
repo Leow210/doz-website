@@ -35,7 +35,7 @@ const AchievementsPage = ({ content }) => {
                             Where Our Alumni Work
                         </h1>
                         <p className="text-xl text-white/90">
-                            Check out some of the places our members have gone on to work at.
+                            Check out some of the places our members have gone on to work.
                         </p>
                     </div>
                 </div>
