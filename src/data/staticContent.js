@@ -1,6 +1,6 @@
 
 // This file is auto-generated. Do not edit directly.
-// Last updated: 2025-01-16T05:57:11.032Z
+// Last updated: 2025-01-26T03:03:28.390Z
 
 export const siteContent = {
   "members": [
@@ -132,7 +132,7 @@ export const siteContent = {
       "Position": "VP of DEI",
       "Year": "2025",
       "Major": "International Relations & Journalism",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5635AQFF3hzePRpObA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1726956855273?e=1737327600&v=beta&t=Acyffi4_QZ_vFzzhiEGUR_vNam7ofo41a0VtUlNqBVk",
+      "ImageUrl": "https://imgur.com/a/6GgxsVF",
       "LinkedIn": "https://www.linkedin.com/in/zainshafikhan/",
       "Type": "eboard"
     },

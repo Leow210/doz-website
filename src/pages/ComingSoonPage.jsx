@@ -24,59 +24,53 @@ const ComingSoonPage = () => {
             time: "1:00 PM - 3:30 PM"
         },
         {
-            icon: Pizza,
-            date: "Jan 24/25",
-            title: "Social with DPE",
-            time: "TBD"
-        },
-        {
             icon: Users,
             date: "Jan 28",
             title: "Info Session #1 - Speed Dating",
+            time: "7:00 PM - 8:30 PM"
+        },
+        {
+            icon: FileText,
+            date: "Jan 29",
+            title: "Networking Workshop",
             time: "7:00 PM - 8:30 PM"
         }
     ];
 
     const rightColumnEvents = [
         {
-            icon: FileText,
-            date: "Jan 29",
-            title: "Networking Workshop",
+            icon: Pizza,
+            date: "Jan 30",
+            title: "Event 2: Pizza & Trivia",
             time: "7:00 PM - 8:30 PM"
         },
         {
-            icon: Pizza,
+            icon: FileText,
             date: "Jan 30",
-            title: "Event 2: Pizza & Trivia + Applications Due",
-            time: "7:00 PM - 8:30 PM"
+            title: "Applications Due",
+            time: "11:59 PM"
         },
         {
             icon: UserPlus,
             date: "Jan 31",
             title: "Group Interviews",
-            time: "TBD"
+            time: "3:00 PM - 7:00 PM"
         },
     ];
 
     return (
         <div className="min-h-screen relative bg-emerald-50/30">
-            {/* Background Pattern */}
             <div className="absolute inset-0 bg-grid-gray-900/[0.04] bg-[size:32px]" />
-
-            {/* Green Header */}
             <div className="fixed top-0 left-0 right-0 w-full h-24 bg-emerald-600 z-10" />
 
-            {/* Main Content */}
             <div className="container mx-auto px-4 pt-32 pb-16 relative">
                 <div className="max-w-4xl mx-auto">
                     <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                        {/* Status Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full">
                             <Clock className="w-4 h-4 text-emerald-600" />
-                            <span className="text-sm font-medium text-emerald-600">Applications Opening Soon</span>
+                            <span className="text-sm font-medium text-emerald-600">Applications Now Open</span>
                         </div>
 
-                        {/* Main Content */}
                         <div className="mt-8 space-y-4">
                             <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
                                 Spring 2025
@@ -85,13 +79,11 @@ const ComingSoonPage = () => {
                                 </span>
                             </h1>
                             <p className="text-xl text-gray-600">
-                                Our application period for Spring 2025 hasn't started yet.
-                                Check back soon and fill out our interest form!
+                                Our application period for Spring 2025 is now open!
+                                Submit your application by January 30th at 11:59 PM.
                             </p>
                         </div>
 
-
-                        {/* Timeline Section */}
                         <div className="mt-12 bg-gradient-to-br from-white via-emerald-50 to-white p-8 rounded-xl">
                             <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2 mb-8">
                                 <Calendar className="w-5 h-5 text-emerald-600" />
@@ -99,14 +91,11 @@ const ComingSoonPage = () => {
                             </h3>
 
                             <div className="grid md:grid-cols-2 gap-8">
-                                {/* Left Column */}
                                 <div className="space-y-6">
                                     {leftColumnEvents.map((event, index) => (
                                         <TimelineEvent key={index} {...event} />
                                     ))}
                                 </div>
-
-                                {/* Right Column */}
                                 <div className="space-y-6">
                                     {rightColumnEvents.map((event, index) => (
                                         <TimelineEvent key={index} {...event} />
@@ -115,19 +104,17 @@ const ComingSoonPage = () => {
                             </div>
                         </div>
 
-                        {/* Interest Form Button */}
                         <div className="mt-12 text-center">
                             <Link
-                                to="https://docs.google.com/forms/d/1AWdb4gLNORpnymZp508WJ3ozMNvrCUplXEm-Co3g3mE/viewform?edit_requested=true"
+                                to="https://docs.google.com/forms/d/e/1FAIpQLSf3jPCXE5tum1rQGN47FdcT3qSqPkuO8DIGn3Jxz2ZmISArIQ/viewform"
                                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg
                                          bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 
                                          transition-colors duration-200 font-medium"
                             >
-                                Fill out our interest form
+                                Apply Now
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
                         </div>
-
                     </div>
                 </div>
             </div>
