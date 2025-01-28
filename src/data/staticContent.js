@@ -1,6 +1,6 @@
 
 // This file is auto-generated. Do not edit directly.
-// Last updated: 2025-01-26T03:03:28.390Z
+// Last updated: 2025-01-28T01:49:44.760Z
 
 export const siteContent = {
   "members": [
@@ -10,7 +10,7 @@ export const siteContent = {
       "Position": "Chapter Co-President",
       "Year": "2026",
       "Major": "Economics & Data Science",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQEa6m-rpR4MLA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726431567945?e=1741824000&v=beta&t=x1p633Ot8WTUA1QfP9aPiuQpYqD2NYPB6uy9aSZZylc",
+      "ImageUrl": "https://i.imgur.com/PBPAIPk.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/rachanakadikar/",
       "Type": "eboard",
       "Bio": "",
@@ -32,7 +32,7 @@ export const siteContent = {
       "Position": "VP of Communications",
       "Year": "2028",
       "Major": "Business Administration",
-      "ImageUrl": "",
+      "ImageUrl": "https://i.imgur.com/JDnMjMZ.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/emmiechun/",
       "Type": "eboard"
     },
@@ -42,7 +42,7 @@ export const siteContent = {
       "Position": "VP of Communications",
       "Year": "2027",
       "Major": "Business Administration",
-      "ImageUrl": "",
+      "ImageUrl": "https://i.imgur.com/s00ROWu.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/chloe-wong-0000822a9/",
       "Type": "eboard"
     },
@@ -52,7 +52,7 @@ export const siteContent = {
       "Position": "VP of Operations",
       "Year": "2027",
       "Major": "Business Administration",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQEmaq99J3mBeA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730831865609?e=1742428800&v=beta&t=DCvY9MV7ZZlHkc-YXyn3G7R8dwxVvdUOfE3iNs4VRYs",
+      "ImageUrl": "https://i.imgur.com/LCfM732.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/meghan-webster",
       "Type": "eboard"
     },
@@ -62,7 +62,7 @@ export const siteContent = {
       "Position": "VP of Expansion",
       "Year": "2026",
       "Major": "Communication",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQHe35XoAaxtOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728545670708?e=1742428800&v=beta&t=3Ao-TfCtGYvF_j2Rg1Ks03JcqxLmn73oNe8xQCBSbm4",
+      "ImageUrl": "https://i.imgur.com/OyxWERA.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/ashleyhuang819/",
       "Type": "eboard"
     },
@@ -72,7 +72,7 @@ export const siteContent = {
       "Position": "VP of Expansion",
       "Year": "2025",
       "Major": "Business Administration",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQFqjezWSe8roQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689110875501?e=1742428800&v=beta&t=F4ge-j2VuuFkNlmA5jHG9HZKywMCcq9sluR3K6n_7CU",
+      "ImageUrl": "https://i.imgur.com/0GqYqss.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/tiff-vo/",
       "Type": "eboard"
     },
@@ -82,7 +82,7 @@ export const siteContent = {
       "Position": "VP of Activism",
       "Year": "2027",
       "Major": "Global Health",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQHUBpqsyG7K4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729799550204?e=1742428800&v=beta&t=VS41SdOlpop1twc1T0Glqh9y6zJgC-dmXIjlag7JqnI",
+      "ImageUrl": "https://i.imgur.com/7NqNuwi.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/shawn-shih-75642b297/",
       "Type": "eboard"
     },
@@ -92,7 +92,7 @@ export const siteContent = {
       "Position": "VP of Professional Programming",
       "Year": "2026",
       "Major": "Computer Science",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQGRCE0hSkvU2g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718243620503?e=1742428800&v=beta&t=Nq08LheLo8Qy5K_CBFajOCwcszAmiwICsw8s3iO_r8s",
+      "ImageUrl": "https://i.imgur.com/5gl2tku.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/leo-rosales-woo/",
       "Type": "eboard"
     },
@@ -102,7 +102,7 @@ export const siteContent = {
       "Position": "VP of Social Programming",
       "Year": "2026",
       "Major": "Real Estate",
-      "ImageUrl": "",
+      "ImageUrl": "https://i.imgur.com/8Y3yDw8.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/harrymoon/",
       "Type": "eboard"
     },
@@ -112,7 +112,7 @@ export const siteContent = {
       "Position": "VP of Leadership Development",
       "Year": "2026",
       "Major": "Business Administration",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQGSmlv7OT4tOQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725343034415?e=1742428800&v=beta&t=SxNIi2wIDsOLPAqf6p5s1HcWgbLA2H_D93RCnE5chCg",
+      "ImageUrl": "https://i.imgur.com/zJVpsER.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/kidistnega2003/",
       "Type": "eboard"
     },
@@ -132,7 +132,7 @@ export const siteContent = {
       "Position": "VP of DEI",
       "Year": "2025",
       "Major": "International Relations & Journalism",
-      "ImageUrl": "https://imgur.com/a/6GgxsVF",
+      "ImageUrl": "https://i.imgur.com/FgCBbnh.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/zainshafikhan/",
       "Type": "eboard"
     },
@@ -142,7 +142,7 @@ export const siteContent = {
       "Position": "Seargent at Arms",
       "Year": "2027",
       "Major": "Business Administration",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D4D03AQFHwCu8PpbwHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707246485588?e=1742428800&v=beta&t=J9mXFWLahGD22nmYLGx2H9q8HgkfzU6Ovm8qIpORf_c",
+      "ImageUrl": "https://i.imgur.com/AdUULS9.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/katelyn-saiki/",
       "Type": "eboard"
     },

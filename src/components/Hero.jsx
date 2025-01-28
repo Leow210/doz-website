@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import heroImage from '/src/assets/dozeboard2024.jpeg';
+import heroImage from '/src/assets/Hero2024.jpeg';
 
 const Hero = () => {
     return (
