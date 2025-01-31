@@ -114,7 +114,7 @@ const Header = ({ alwaysShowBackground = false }) => {
     );
 };
 
-// NavLink component remains the same
+//navlink component will remain the same
 const NavLink = ({ to, children, isScrolled, isActive }) => {
     const isHashLink = to.startsWith('/#');
     const Component = isHashLink ? 'a' : Link;
