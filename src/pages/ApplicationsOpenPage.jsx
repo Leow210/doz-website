@@ -15,7 +15,7 @@ const TimelineEvent = ({ icon: Icon, date, title, time }) => (
     </div>
 );
 
-const ComingSoonPage = () => {
+const ApplicationsOpenPage = () => {
     const leftColumnEvents = [
         {
             icon: Users,
@@ -122,4 +122,4 @@ const ComingSoonPage = () => {
     );
 };
 
-export default ComingSoonPage;
+export default ApplicationsOpenPage;

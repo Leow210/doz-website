@@ -1,6 +1,6 @@
 
 // This file is auto-generated. Do not edit directly.
-// Last updated: 2025-01-28T01:49:44.760Z
+// Last updated: 2025-02-20T02:07:05.117Z
 
 export const siteContent = {
   "members": [
@@ -139,7 +139,7 @@ export const siteContent = {
     {
       "": "",
       "Name": "Katelyn Saiki",
-      "Position": "Seargent at Arms",
+      "Position": "Sergeant at Arms",
       "Year": "2027",
       "Major": "Business Administration",
       "ImageUrl": "https://i.imgur.com/AdUULS9.jpeg",

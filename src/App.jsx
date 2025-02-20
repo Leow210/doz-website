@@ -8,7 +8,8 @@ import MembersPage from './pages/MembersPage';
 import ResourcesPage from './pages/ResourcesPage';
 import GeneralMembersPage from './pages/GeneralMembersPage';
 import AchievementsPage from './pages/AchievementsPage';
-import ComingSoonPage from './pages/ComingSoonPage';
+import ApplicationsOpenPage from './pages/ApplicationsOpenPage';
+import ApplicationsClosedPage from './pages/ApplicationsClosedPage';
 import ScrollManager from './components/ScrollManager';
 import AdminPanel from './pages/AdminPanel';
 
@@ -30,7 +31,7 @@ const App = () => {
             <Route path="/members" element={<GeneralMembersPage />} />
             <Route path="/achievements" element={<AchievementsPage />} />
             <Route path="/resources" element={<ResourcesPage />} />
-            <Route path="/apply" element={<ComingSoonPage />} />
+            <Route path="/apply" element={<ApplicationsClosedPage />} />
           </Routes>
         </Layout>} />
       </Routes>
