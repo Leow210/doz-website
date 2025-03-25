@@ -16,7 +16,7 @@ export const fetchAllContent = async () => {
     const SHEET_ID = '1XNHsFI29XL-FYOwQ_N3jV5Z1VrudS3f9lg4x9FBDcDk';  // You'll get this from your Google Sheet URL
     const API_KEY = 'AIzaSyCmnn2lx0Q4ZKs5P5QwVbovamRwh3g3Ybc';     // Your Google Sheets API key
 
-    // Define all the tabs/ranges we want to fetch
+    // Define all the tabs/ranges to fetch
     const ranges = [
         'Members!A1:Z1000',
         'Achievements!A1:Z1000',

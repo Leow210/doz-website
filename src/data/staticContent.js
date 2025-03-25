@@ -1,6 +1,6 @@
 
 // This file is auto-generated. Do not edit directly.
-// Last updated: 2025-02-20T02:07:05.117Z
+// Last updated: 2025-03-25T03:55:23.360Z
 
 export const siteContent = {
   "members": [
@@ -22,7 +22,7 @@ export const siteContent = {
       "Position": "Chapter Co-President",
       "Year": "2025",
       "Major": "International Relations & Cognitive Science",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQFrsvNUeACXBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712098318669?e=1742428800&v=beta&t=mxVRIXaYnCKoxSrzpLE9_7ztgFqhAfmDfudmNgCCL0w",
+      "ImageUrl": "https://imgur.com/JGDw099.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/skyler-korkowski/",
       "Type": "eboard"
     },
@@ -122,7 +122,7 @@ export const siteContent = {
       "Position": "VP of Leadership Development",
       "Year": "2026",
       "Major": "Business Administration",
-      "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQH20e0j5uNNUg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696493119487?e=1742428800&v=beta&t=Dag1AdmTM4lTEjdkS4J8PRgfg1MmsmIneBJaRCZ3xtw",
+      "ImageUrl": "https://imgur.com/1SGWt70.jpeg",
       "LinkedIn": "https://www.linkedin.com/in/brandonjsun/",
       "Type": "eboard"
     },
@@ -165,6 +165,16 @@ export const siteContent = {
       "ImageUrl": "https://media.licdn.com/dms/image/v2/D5603AQFR4R6e8x0UEg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730651029378?e=1742428800&v=beta&t=6913svqNAQyUeM5RKjYRL3Li-Z4HMu4YKtuJbQnXxYs",
       "LinkedIn": "https://www.linkedin.com/in/amanda-wang-42560a32b/",
       "Type": "active"
+    },
+    {
+      "": "",
+      "Name": "Nico Dimaano",
+      "Position": "VP of Membership",
+      "Year": "2025",
+      "Major": "Computer Science and Business Administration",
+      "ImageUrl": "https://imgur.com/aMGU9wr.jpeg",
+      "LinkedIn": "https://www.linkedin.com/in/ndimaano/",
+      "Type": "eboard"
     }
   ],
   "achievements": [
