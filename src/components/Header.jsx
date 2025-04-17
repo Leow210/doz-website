@@ -20,7 +20,6 @@ const Header = ({ alwaysShowBackground = false }) => {
         { name: 'About', path: '/about' },
         { name: 'E-board', path: '/eboard' },
         { name: 'Achievements', path: '/achievements' },
-        { name: 'Gallery', path: '/gallery' },
         { name: 'Apply', path: '/apply', isButton: true }
     ];
 
