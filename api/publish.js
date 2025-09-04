@@ -1,141 +1,133 @@
-// api/publish.js
+// Vercel Serverless Function to update site content from Google Sheets
 
-// This is a serverless function that will be hosted by Vercel.
-// It securely fetches data from Google Sheets and commits it to GitHub.
+import { Octokit } from "@octokit/rest";
 
-import { Octokit } from '@octokit/rest';
-import { Buffer } from 'buffer';
+// Helper function to process raw sheet data into structured content
+const processSheetData = (rawData) => {
+    if (!rawData || rawData.length < 2) {
+        return [];
+    }
+    const [headers, ...rows] = rawData;
+    return rows.map(row => {
+        const item = {};
+        headers.forEach((header, index) => {
+            // Ensure the header is a valid key (e.g., replace spaces)
+            const key = header.trim();
+            item[key] = row[index] || ""; // Default to empty string if cell is undefined
+        });
+        return item;
+    });
+};
 
-// Helper function to fetch data from Google Sheets
+
+// Main function to fetch all content from Google Sheets
 const fetchAllContent = async () => {
-    console.log("Starting to fetch content from Google Sheets...");
-
-    // IMPORTANT: Keep your API Key secure on the server!
     const SHEET_ID = process.env.GOOGLE_SHEET_ID;
     const API_KEY = process.env.GOOGLE_SHEETS_API_KEY;
 
-    if (!SHEET_ID || !API_KEY) {
-        console.error("Missing Google Sheets API credentials in environment variables.");
-        throw new Error("Server configuration error: Missing Google Sheets API credentials.");
-    }
-    console.log("Google Sheets credentials found.");
-
+    // Define only the tabs that exist and have content
     const ranges = [
-        'Members!A1:Z1000',
-        'Achievements!A1:Z1000',
-        'Features!A1:Z1000',
-        'GeneralContent!A1:Z1000',
+        { name: 'members', range: 'Members!A1:Z1000' },
+        { name: 'achievements', range: 'Achievements!A1:Z1000' },
     ];
 
-    const processSheetData = (rawData) => {
-        if (!rawData || !Array.isArray(rawData)) return [];
-        const [headers, ...rows] = rawData;
-        return rows.map(row => {
-            const item = {};
-            headers.forEach((header, index) => {
-                item[header] = row[index] || "";
-            });
-            return item;
-        });
-    };
+    const siteContent = {};
 
-    try {
-        const fetchPromises = ranges.map(range =>
-            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${range}?key=${API_KEY}`)
-                .then(res => {
-                    if (!res.ok) {
-                        throw new Error(`Failed to fetch range ${range}: ${res.status} ${res.statusText}`);
-                    }
-                    return res.json();
-                })
-        );
+    console.log("Starting to fetch content from Google Sheets...");
 
-        const responses = await Promise.all(fetchPromises);
-        console.log("Successfully fetched all ranges from Google Sheets.");
+    for (const { name, range } of ranges) {
+        try {
+            const response = await fetch(
+                `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${range}?key=${API_KEY}`
+            );
 
-        const [members, achievements, features, generalContent] = responses.map(
-            response => processSheetData(response.values)
-        );
+            if (!response.ok) {
+                // Log detailed error from Google Sheets API
+                const errorData = await response.json();
+                console.warn(`Warning: Failed to fetch range ${range}. Status: ${response.status}. Details: ${JSON.stringify(errorData.error)}`);
+                siteContent[name] = []; // Assign empty array if fetch fails
+                continue; // Continue to the next tab
+            }
 
-        return { members, achievements, features, generalContent };
-    } catch (error) {
-        console.error('Error fetching sheet data:', error.message);
-        throw new Error(`Failed to fetch from Google Sheets. Please check your SHEET_ID and API_KEY. Original error: ${error.message}`);
+            const data = await response.json();
+            siteContent[name] = processSheetData(data.values);
+            console.log(`Successfully fetched and processed the "${name}" tab.`);
+
+        } catch (error) {
+            console.warn(`Warning: An unexpected error occurred while fetching the "${name}" tab.`, error);
+            siteContent[name] = []; // Assign empty array on unexpected error
+        }
     }
+
+    // Ensure all expected keys exist on the final object, even if fetching failed
+    if (!siteContent.members) siteContent.members = [];
+    if (!siteContent.achievements) siteContent.achievements = [];
+    if (!siteContent.features) siteContent.features = [];
+    if (!siteContent.generalContent) siteContent.generalContent = [];
+
+
+    console.log("Finished fetching all content.");
+    return siteContent;
 };
 
-// Main handler for the serverless function
+
+// The main handler for the Vercel serverless function
 export default async function handler(req, res) {
-    console.log(`Received ${req.method} request to /api/publish`);
-    // 1. Check for POST request
-    if (req.method !== 'POST') {
-        return res.status(405).json({ message: 'Method Not Allowed' });
+    console.log("Publish function invoked.");
+
+    // 1. Authentication
+    const { password } = req.body;
+    if (password !== process.env.ADMIN_PASSWORD) {
+        console.log("Authentication failed: Wrong password.");
+        return res.status(401).json({ message: "Unauthorized: Wrong password" });
     }
+    console.log("Authentication successful.");
 
     try {
-        const { password } = JSON.parse(req.body);
-
-        // 2. Authenticate the request
-        if (!process.env.ADMIN_PASSWORD) {
-            console.error("ADMIN_PASSWORD is not set on the server.");
-            return res.status(500).json({ message: "Server configuration error: Admin password not set." });
-        }
-        if (password !== process.env.ADMIN_PASSWORD) {
-            console.warn("Unauthorized access attempt failed.");
-            return res.status(401).json({ message: 'Unauthorized' });
-        }
-        console.log("Authentication successful.");
-
-        // 3. Fetch latest content from Google Sheets
+        // 2. Fetch Content from Google Sheets
         const content = await fetchAllContent();
-        const staticContent = `
+
+        // 3. GitHub Logic to update the file
+        const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+        const owner = process.env.GITHUB_OWNER;
+        const repo = process.env.GITHUB_REPO;
+        const path = 'src/data/staticContent.js';
+
+        const staticContentFile = `
 // This file is auto-generated. Do not edit directly.
 // Last updated: ${new Date().toISOString()}
 
 export const siteContent = ${JSON.stringify(content, null, 2)};
 `;
 
-        // 4. Commit the updated content to GitHub
         console.log("Preparing to commit updated content to GitHub...");
-        const { GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO } = process.env;
-        if (!GITHUB_TOKEN || !GITHUB_OWNER || !GITHUB_REPO) {
-            console.error("Missing GitHub credentials in environment variables.");
-            throw new Error("Server configuration error: Missing GitHub credentials.");
-        }
-        console.log(`Committing to ${GITHUB_OWNER}/${GITHUB_REPO}`);
 
-        const octokit = new Octokit({ auth: GITHUB_TOKEN });
-        const path = 'src/data/staticContent.js';
-
+        // Get the current file SHA to update it
         let currentSha;
         try {
-            const { data: fileData } = await octokit.repos.getContent({ owner: GITHUB_OWNER, repo: GITHUB_REPO, path });
+            const { data: fileData } = await octokit.repos.getContent({ owner, repo, path });
             currentSha = fileData.sha;
-            console.log(`Found existing file with SHA: ${currentSha}`);
         } catch (e) {
-            if (e.status === 404) {
-                console.log("staticContent.js not found. A new file will be created.");
-            } else {
-                throw e; // Re-throw other errors
-            }
+            // If the file doesn't exist, we don't need a SHA
+            if (e.status !== 404) throw e;
+            console.log("Static content file does not exist, creating it now.");
         }
 
         await octokit.repos.createOrUpdateFileContents({
-            owner: GITHUB_OWNER,
-            repo: GITHUB_REPO,
+            owner,
+            repo,
             path,
-            message: `feat: update site content via admin panel [${new Date().toISOString()}]`,
-            content: Buffer.from(staticContent).toString('base64'),
+            message: `feat: update website content [${new Date().toISOString()}]`,
+            content: Buffer.from(staticContentFile).toString('base64'),
             sha: currentSha,
         });
 
-        console.log("Commit successful!");
-        return res.status(200).json({ message: 'Content published successfully! Deployment triggered.' });
+        console.log("Successfully committed content to GitHub. Vercel deployment should trigger automatically.");
+        return res.status(200).json({ message: "Publishing successful! Changes are being deployed." });
 
     } catch (error) {
-        console.error('CRITICAL ERROR in publish function:', error);
-        // Ensure a JSON response is sent even on critical failure
-        return res.status(500).json({ message: 'An error occurred during publishing.', error: error.message });
+        console.error("CRITICAL ERROR in publish function:", error);
+        return res.status(500).json({ message: "A server error occurred.", error: error.message });
     }
 }
 
