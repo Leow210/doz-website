@@ -21,8 +21,9 @@ const processSheetData = (rawData) => {
 
 // Main function to fetch all content from Google Sheets
 const fetchAllContent = async () => {
-    const SHEET_ID = process.env.GOOGLE_SHEET_ID;
-    const API_KEY = process.env.GOOGLE_SHEETS_API_KEY;
+    // Use environment variables if available, otherwise fallback to hardcoded values
+    const SHEET_ID = process.env.GOOGLE_SHEET_ID || '1XNHsFI29XL-FYOwQ_N3jV5Z1VrudS3f9lg4x9FBDcDk';
+    const API_KEY = process.env.GOOGLE_SHEETS_API_KEY || 'AIzaSyCmnn2lx0Q4ZKs5P5QwVbovamRwh3g3Ybc';
 
     // Define only the tabs that exist and have content
     const ranges = [
@@ -33,12 +34,15 @@ const fetchAllContent = async () => {
     const siteContent = {};
 
     console.log("Starting to fetch content from Google Sheets...");
+    console.log(`Using Sheet ID: ${SHEET_ID}`);
+    console.log(`API Key present: ${API_KEY ? 'Yes' : 'No'}`);
 
     for (const { name, range } of ranges) {
         try {
-            const response = await fetch(
-                `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${range}?key=${API_KEY}`
-            );
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${range}?key=${API_KEY}`;
+            console.log(`Fetching: ${url}`);
+
+            const response = await fetch(url);
 
             if (!response.ok) {
                 // Log detailed error from Google Sheets API
