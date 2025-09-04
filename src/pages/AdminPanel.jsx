@@ -21,11 +21,20 @@ const AdminPanel = () => {
                 body: JSON.stringify({ password }),
             });
 
-            const data = await response.json();
-
+            // Gracefully handle non-JSON responses from the server on error
             if (!response.ok) {
-                throw new Error(data.message || 'An unknown error occurred.');
+                const contentType = response.headers.get("content-type");
+                let errorMessage;
+                if (contentType && contentType.indexOf("application/json") !== -1) {
+                    const errorData = await response.json();
+                    errorMessage = errorData.message || 'An unknown error occurred.';
+                } else {
+                    errorMessage = await response.text() || 'Server returned a non-JSON error.';
+                }
+                throw new Error(errorMessage);
             }
+
+            const data = await response.json();
 
             setStatus({
                 type: 'success',
@@ -102,7 +111,7 @@ const AdminPanel = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Admin Password"
                                 required
-                                className="w-full pl-12 pr-12 py-3 bg-white rounded-lg border border-gray-200
+                                className="w-full pl-12 pr-12 py-3 bg-white text-gray-900 rounded-lg border border-gray-200
                                          focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-shadow"
                             />
                             <button
@@ -142,4 +151,3 @@ const AdminPanel = () => {
 };
 
 export default AdminPanel;
-
