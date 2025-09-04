@@ -1,18 +1,14 @@
 {
-    "builds": [
-        {
-            "src": "api/publish.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "dist"
-            }
+    "functions": {
+        "api/publish.js": {
+            "includeFiles": "package.json"
         }
-    ],
+    },
     "rewrites": [
+        {
+            "source": "/api/publish",
+            "destination": "/api/publish"
+        },
         {
             "source": "/((?!api/|_next/|static/|public/|favicon.ico).*)",
             "destination": "/index.html"
