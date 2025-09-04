@@ -25,36 +25,36 @@ const ApplicationsOpenPage = () => {
         },
         {
             icon: Users,
-            date: "Jan 28",
-            title: "Info Session #1 - Speed Dating",
-            time: "7:00 PM - 8:30 PM"
+            date: "Sep 4",
+            title: "Event #1 - Speed Dating",
+            time: "7:00 PM - 8:30 PM @URC"
         },
         {
             icon: FileText,
-            date: "Jan 29",
-            title: "Networking Workshop",
-            time: "7:00 PM - 8:30 PM"
+            date: "Sep 8",
+            title: "Event #2 - Professionalism Workshop",
+            time: "7:00 PM - 8:30 PM @TBA"
         }
     ];
 
     const rightColumnEvents = [
         {
             icon: Pizza,
-            date: "Jan 30",
-            title: "Event 2: Pizza & Trivia",
-            time: "7:00 PM - 8:30 PM"
+            date: "Sep 11",
+            title: "Event #3 - Tacos & Trivia",
+            time: "7:00 PM - 8:30 PM @Village Great Lawn"
         },
         {
             icon: FileText,
-            date: "Jan 30",
+            date: "Sep 11",
             title: "Applications Due",
             time: "11:59 PM"
         },
         {
             icon: UserPlus,
-            date: "Jan 31",
+            date: "Sep 12",
             title: "Group Interviews",
-            time: "3:00 PM - 7:00 PM"
+            time: "TBA"
         },
     ];
 
@@ -73,14 +73,14 @@ const ApplicationsOpenPage = () => {
 
                         <div className="mt-8 space-y-4">
                             <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-                                Spring 2025
+                                Fall 2025
                                 <span className="relative ml-4">
                                     <span className="relative z-10 text-emerald-600">Applications</span>
                                 </span>
                             </h1>
                             <p className="text-xl text-gray-600">
-                                Our application period for Spring 2025 is now open!
-                                Submit your application by January 30th at 11:59 PM.
+                                Our application period for Fall 2025 is now open!
+                                Submit your application by September 11th at 11:59 PM.
                             </p>
                         </div>
 
@@ -106,7 +106,7 @@ const ApplicationsOpenPage = () => {
 
                         <div className="mt-12 text-center">
                             <Link
-                                to="https://docs.google.com/forms/d/e/1FAIpQLSf3jPCXE5tum1rQGN47FdcT3qSqPkuO8DIGn3Jxz2ZmISArIQ/viewform"
+                                to="https://docs.google.com/forms/d/e/1FAIpQLSf51CwyvDWOiCAXCCgrAYHrKJnwmxeVK2Ude9HD0sEX0HGTsg/viewform"
                                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg
                                          bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 
                                          transition-colors duration-200 font-medium"

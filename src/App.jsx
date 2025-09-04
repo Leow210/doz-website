@@ -33,7 +33,7 @@ const App = () => {
             <Route path="/achievements" element={<AchievementsPage />} />
             <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/apply" element={<ApplicationsClosedPage />} />
+            <Route path="/apply" element={<ApplicationsOpenPage />} />
           </Routes>
         </Layout>} />
       </Routes>
