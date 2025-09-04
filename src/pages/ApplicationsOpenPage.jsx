@@ -54,7 +54,7 @@ const ApplicationsOpenPage = () => {
             icon: UserPlus,
             date: "Sep 12",
             title: "Group Interviews",
-            time: "TBA"
+            time: "3:00 PM - 7:00 PM @TBA"
         },
     ];
 
