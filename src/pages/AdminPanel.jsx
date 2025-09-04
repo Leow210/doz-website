@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Shield, Key, ExternalLink, Cloud, CheckCircle, XCircle, Loader } from 'lucide-react';
+import { Shield, Key, ExternalLink, Cloud, CheckCircle, XCircle, Loader, Eye, EyeOff } from 'lucide-react';
 
 const AdminPanel = () => {
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState({ type: '', message: '' });
+
+    // The Sheet ID is public. Hardcoding it here avoids build issues.
+    const sheetId = '1XNHsFI29XL-FYOwQ_N3jV5Z1VrudS3f9lg4x9FBDcDk';
 
     const handlePublish = async (e) => {
         e.preventDefault();
@@ -80,7 +84,7 @@ const AdminPanel = () => {
                             <li>Wait 2-3 minutes for changes to go live.</li>
                         </ol>
                         <a
-                            href={`https://docs.google.com/spreadsheets/d/${import.meta.env.GOOGLE_SHEET_ID}/edit`}
+                            href={`https://docs.google.com/spreadsheets/d/${sheetId}/edit`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium mt-4"
@@ -91,16 +95,24 @@ const AdminPanel = () => {
 
                     <form onSubmit={handlePublish} className="space-y-6">
                         <div className="relative">
-                            <Key className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <Key className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                             <input
-                                type="password"
+                                type={showPassword ? 'text' : 'password'}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Admin Password"
                                 required
-                                className="w-full pl-12 pr-4 py-3 bg-white rounded-lg border border-gray-200
+                                className="w-full pl-12 pr-12 py-3 bg-white rounded-lg border border-gray-200
                                          focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-shadow"
                             />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                                aria-label={showPassword ? 'Hide password' : 'Show password'}
+                            >
+                                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                            </button>
                         </div>
 
                         <button
@@ -130,3 +142,4 @@ const AdminPanel = () => {
 };
 
 export default AdminPanel;
+
