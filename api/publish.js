@@ -19,7 +19,6 @@ const processSheetData = (rawData) => {
     });
 };
 
-
 // Main function to fetch all content from Google Sheets
 const fetchAllContent = async () => {
     const SHEET_ID = process.env.GOOGLE_SHEET_ID;
@@ -65,24 +64,40 @@ const fetchAllContent = async () => {
     if (!siteContent.features) siteContent.features = [];
     if (!siteContent.generalContent) siteContent.generalContent = [];
 
-
     console.log("Finished fetching all content.");
     return siteContent;
 };
-
 
 // The main handler for the Vercel serverless function
 export default async function handler(req, res) {
     console.log("Publish function invoked.");
 
-    // Check if the request body is parsed correctly
-    if (typeof req.body !== 'object' || req.body === null) {
-        console.error("Request body is not a valid JSON object. Body:", req.body);
-        return res.status(400).json({ message: "Bad Request: Invalid request body." });
+    // Only accept POST requests
+    if (req.method !== 'POST') {
+        return res.status(405).json({ message: "Method not allowed. Use POST." });
     }
 
+    let requestBody;
+
+    // Parse request body properly
+    try {
+        if (typeof req.body === 'string') {
+            requestBody = JSON.parse(req.body);
+        } else if (typeof req.body === 'object' && req.body !== null) {
+            requestBody = req.body;
+        } else {
+            throw new Error('Invalid request body format');
+        }
+    } catch (error) {
+        console.error("Failed to parse request body:", error);
+        console.error("Raw body:", req.body);
+        return res.status(400).json({ message: "Bad Request: Invalid JSON in request body." });
+    }
+
+    console.log("Request body parsed successfully:", typeof requestBody, Object.keys(requestBody));
+
     // 1. Authentication
-    const { password } = req.body;
+    const { password } = requestBody;
     const serverPassword = process.env.ADMIN_PASSWORD;
 
     // Detailed, secure logging for debugging password issues
@@ -146,4 +161,3 @@ export const siteContent = ${JSON.stringify(content, null, 2)};
         return res.status(500).json({ message: "A server error occurred.", error: error.message });
     }
 }
-
