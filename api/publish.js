@@ -75,10 +75,26 @@ const fetchAllContent = async () => {
 export default async function handler(req, res) {
     console.log("Publish function invoked.");
 
+    // Check if the request body is parsed correctly
+    if (typeof req.body !== 'object' || req.body === null) {
+        console.error("Request body is not a valid JSON object. Body:", req.body);
+        return res.status(400).json({ message: "Bad Request: Invalid request body." });
+    }
+
     // 1. Authentication
     const { password } = req.body;
-    if (password !== process.env.ADMIN_PASSWORD) {
-        console.log("Authentication failed: Wrong password.");
+    const serverPassword = process.env.ADMIN_PASSWORD;
+
+    // Detailed, secure logging for debugging password issues
+    console.log(`Password received from client: ${typeof password === 'string' ? `String with length ${password.length}` : `Type ${typeof password}`}`);
+    if (serverPassword) {
+        console.log(`Server password loaded. Starts with: "${serverPassword.slice(0, 2)}...", Ends with: "...${serverPassword.slice(-2)}"`);
+    } else {
+        console.error("CRITICAL: ADMIN_PASSWORD environment variable is not set or empty on the server!");
+    }
+
+    if (password !== serverPassword) {
+        console.log("Authentication failed: Passwords do not match.");
         return res.status(401).json({ message: "Unauthorized: Wrong password" });
     }
     console.log("Authentication successful.");
