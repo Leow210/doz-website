@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, ArrowRight, Users, FileText, UserPlus, Pizza } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Users, FileText, UserPlus, Pizza, Taco } from 'lucide-react';
 
 const TimelineEvent = ({ icon: Icon, date, title, time }) => (
     <div className="flex items-start gap-4 relative">
@@ -19,9 +19,9 @@ const ApplicationsOpenPage = () => {
     const leftColumnEvents = [
         {
             icon: Users,
-            date: "Jan 21-23",
+            date: "Aug 25-27",
             title: "Recruitment Tabling",
-            time: "1:00 PM - 3:30 PM"
+            time: "11:00 AM - 2:00 PM"
         },
         {
             icon: Users,
@@ -39,7 +39,7 @@ const ApplicationsOpenPage = () => {
 
     const rightColumnEvents = [
         {
-            icon: Pizza,
+            icon: Taco,
             date: "Sep 11",
             title: "Event #3 - Tacos & Trivia",
             time: "7:00 PM - 8:30 PM @Village Great Lawn"
