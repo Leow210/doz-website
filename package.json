@@ -15,6 +15,7 @@
     "prebuild": "npm run generate-content"
   },
   "dependencies": {
+    "@octokit/rest": "^21.0.1",
     "airtable": "^0.12.2",
     "dotenv": "^16.4.7",
     "lucide-react": "^0.469.0",
